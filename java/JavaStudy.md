@@ -454,8 +454,99 @@ c = (Car)v; // 只有当v这个变量实际管理的是Car才行
 
 ### 细胞自动机
 
-数据与表现分离
+> 初始化时，以一定概率复活网格内的细胞
+>
+> 细胞八邻域内的细胞数量`n<2 | n >3`时该细胞死亡，恰好`n==3`时存活
 
-责任驱动的设计
 
-* 将程序要实现的功能分配到合适的类/对象中
+
+1. 数据与表现分离
+
+2. 责任驱动的设计
+   * 将程序要实现的功能分配到合适的类/对象中
+
+3. 网格化
+
+
+
+## 接口
+
+> * 接口是纯抽象类
+>   * 所有成员函数都是抽象函数
+>   * 所有成员变量都是`public static final`
+> * 接口规定了长什么样，但是不管里面有什么
+
+
+
+**实现接口**
+
+* 类用extends，接口用implements
+* 类可以实现很多接口
+* 接口可以继承接口，但不能继承类
+* 接口不能实现接口
+
+
+
+### 面向接口的编程方式
+
+* 设计程序时先定义接口，再实现类
+* 任何需要在函数间传入传出的一定是接口而不是具体的类
+* 是Java成功的关键之一，因为极适合多人同时写一个大程序
+* 也是Java被批评的要点之一，因为代码量膨胀起来很快
+
+
+
+### 反转控制
+
+​	JButton中有ActionListener接口接受消息，有addActionListener方法添加ActionListener对象，按钮知道自己被按下以后，能通过Override的actionPerformed函数实现动作。
+
+```java
+btn.addActionListener(new ActionListener(){ // ActionListener是接口
+    @Override
+    public void actionPerformed(ActionEvent e){ // 匿名类
+        System.out.println("已经按下！");
+    }
+});
+```
+
+#### 注入反转
+
+* 由按钮公布一个收听者接口和一对注册/注销函数
+* 你的代码实现那个接口，将收听者对象注册在按钮上
+* 一旦按钮被按下，就会反过来调用你的收听者对象的某个函数
+
+#### 匿名类
+
+* 在`new`对象的时候给出的类的定义形成了匿名类
+* 匿名类可以继承某类，也可以实现某接口
+* Swing的消息机质广泛使用匿名类
+
+#### 内部类
+
+* 定义在别的类内部、函数内部的类
+* 内部类能直接访问外部的全部资源
+  * 包括任何私有的成员
+  * 外部是函数时，只能访问那个函数里final的变量
+
+​	*提前在内部定义一个类继承ActionListener接口*
+
+```java
+private class MyLisntenr inplements ActionListener{
+    @Override
+    public void actionPerformed(ActionEvent e){
+        System.out.println("已经按下！");
+    }
+}
+btn.addListener(new myListener);
+```
+
+
+
+### 狐狸和兔子
+
+> 1. 狐狸和兔子都有年龄
+> 2. 年龄到了一定上限会自然死亡
+> 3. 狐狸可以随机决定在周围的兔子中吃一个
+> 4. 狐狸和兔子可以随机决定生一个小的，放在旁边的空的格子里
+> 5. 如果不吃也不生，可以随机向旁边的空格子移动一步
+
