@@ -550,3 +550,244 @@ btn.addListener(new myListener);
 > 4. 狐狸和兔子可以随机决定生一个小的，放在旁边的空的格子里
 > 5. 如果不吃也不生，可以随机向旁边的空格子移动一步
 
+
+
+## swing
+
+### JTable
+
+* 用`JTable`类可以以表格的形式显示和编辑数据。但`JTable`类的对象并不储存数据，它只是数据的表现。
+
+> 数据与容器分离
+
+```java
+package classTable;
+
+import javax.swing.*;
+
+/**
+ * @author sece
+ * @version 1.0
+ * @since 2021-03-21
+ */
+public class KCB {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        JTable table = new JTable(new KCBData());
+        JScrollPane pane = new JScrollPane(table);
+        frame.add(pane);
+        frame.pack();
+        // 关闭窗口->结束程序
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
+
+```
+
+```java
+package classTable;
+
+import javax.swing.event.TableModelListener;
+import javax.swing.table.TableModel;
+
+/**
+ * @author sece
+ * @version 1.0
+ * @since 2021-03-21
+ */
+public class KCBData implements TableModel {
+    private String[] title={
+            "周一","周二","周三","周四","周五","周六","周日",
+    };
+    private String[][] data = new String[8][7];
+    public KCBData(){
+        for(int i=0;i< data.length;i++){
+            for(int j=0;j<data[i].length;j++){
+                data[i][j] = "";
+            }
+        }
+    }
+    @Override
+    public int getRowCount() {
+        return 8;
+    }
+
+    @Override
+    public int getColumnCount() {
+        return 7;
+    }
+
+    @Override
+    public String getColumnName(int columnIndex) {
+        return title[columnIndex];
+    }
+
+    @Override
+    public Class<?> getColumnClass(int columnIndex) {
+        return String.class;
+    }
+
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return true;
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        return data[rowIndex][columnIndex];
+    }
+
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+        data[rowIndex][columnIndex] = (String)aValue;
+
+    }
+
+    @Override
+    public void addTableModelListener(TableModelListener l) {
+
+    }
+
+    @Override
+    public void removeTableModelListener(TableModelListener l) {
+
+    }
+}
+```
+
+### MVC
+
+* 数据、表现和控制三者分离，各负其责
+  * M = Model(模型)
+  * V = View(表现)
+  * C = Control(控制)
+* 模型：保存和维护数据，提供接口让外部修改数据，通知表现需要刷新
+* 表现：从模型获得数据，根据数据画出表现
+* 控制：从用户得到输入，根据输入调整数据
+
+
+
+> 用户控制和表现没有直接关系，用户修改数据，View根据数据重新决定表现。
+
+
+
+## 异常
+
+### 异常捕捉示例
+
+```java
+package exception;
+
+import java.util.Scanner;
+
+/**
+ * @author sece
+ * @version 1.0
+ * @since 2021-03-21
+ */
+public class ArrayIndex {
+    public static void main(String[] args) {
+        int[] a = new int[10];
+        int index;
+        Scanner in = new Scanner(System.in);
+        index = in.nextInt();
+        
+        // 异常处理
+        try{
+            a[index] = 10;
+            System.out.println("hello!");
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Caught!");
+        }
+    }
+}
+
+```
+
+
+
+### 异常捕捉机制
+
+```java
+package exception;
+
+/**
+ * @author sece
+ * @version 1.0
+ * @since 2021-03-21
+ */
+public class ArrayIndex2 {
+    public static void f(){
+        int[] a = new int[10];
+        a[10] = 99;
+        System.out.println("hello");
+    }
+    
+    public static void main(String[] args){
+        try{
+            f();
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("caught");
+        }
+        System.out.println("main");
+    }
+}
+
+// caught
+// main
+```
+
+
+
+
+
+* 有异常 -> 所处是`try` -> 有`catch`匹配 -> 继续下面的语句
+  * 								​									没有`catch`匹配 -> 退出到外层 -> 再次进行异常判断
+  * 								所处不是`try` -> 所处是函数 -> 返回调用者 -> 再次进行异常判断
+  * 								 						​                            所处不是函数 -> 退出到外层  -> 再次进行异常判断
+
+
+
+### 捕捉之后
+
+```java
+package exception;
+
+/**
+ * @author sece
+ * @version 1.0
+ * @since 2021-03-21
+ */
+public class ArrayIndex2 {
+    public static void f(){
+        int[] a = new int[10];
+        a[10] = 99;
+        System.out.println("hello");
+    }
+
+    public static void main(String[] args){
+        try{
+            f();
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+            // 直接输出e相当于打印e.toString
+            System.out.println(e.toString());
+            System.out.println("caught");
+            // 打印调用轨迹
+            e.printStackTrace();
+        }
+        System.out.println("main");
+    }
+}
+/*
+10
+java.lang.ArrayIndexOutOfBoundsException: 10
+caught
+main
+java.lang.ArrayIndexOutOfBoundsException: 10
+	at exception.ArrayIndex2.f(ArrayIndex2.java:11)
+	at exception.ArrayIndex2.main(ArrayIndex2.java:17)
+*/
+```
+
