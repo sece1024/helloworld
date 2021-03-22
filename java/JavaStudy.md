@@ -674,6 +674,31 @@ public class KCBData implements TableModel {
 
 ## 异常
 
+* `try...catch`
+* `throw`
+
+
+
+### 异常声明
+
+* 如果你的函数可能抛出异常，就必须在函数头部加以声明
+
+  `void f() throws TooBig, TooSmall, DivZero{//...}`
+
+  `void f(){..}`
+
+* 可以声明并不会真的抛出的异常
+
+* 如果调用一个声明会抛出异常的函数，那么必须
+
+  * 把函数的调用放在`try`块中，并设置`catch`来捕捉所有可能抛出的异常；
+  * 或者，声明自己会抛出无法处理的异常
+
+**异常声明的继承关系**
+
+* 当覆盖一个函数的时候，子类不能声明抛出比父类的版本更多的异常
+* 在子类的构造函数中，必须声明父类可能抛出的全部异常
+
 ### 异常捕捉示例
 
 ```java
@@ -791,3 +816,17 @@ java.lang.ArrayIndexOutOfBoundsException: 10
 */
 ```
 
+
+
+## 流
+
+> 流是输入输出的方式
+
+* 一维，单方向
+
+
+
+**流的基础类**
+
+1. InputStream
+2. OutputStream
