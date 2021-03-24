@@ -830,3 +830,84 @@ java.lang.ArrayIndexOutOfBoundsException: 10
 
 1. InputStream
 2. OutputStream
+
+
+
+### 流过滤器
+
+> 以一个介质流对象为基础层层构建过滤器流，最终形成的流对象能在数据的输入输出过程中，逐层使用过滤器流的方式来读写数据
+
+```java
+package io;
+
+import java.io.*;
+
+/**
+ * @author sece
+ * @version 1.0
+ * @since 2021-03-23
+ */
+// 从文件a.dat中读取数据
+public class ReadDemo01 {
+    public static void main(String[] args) {
+
+        try{
+            DataOutputStream out = new DataOutputStream(
+                    new BufferedOutputStream(
+                            new FileOutputStream("a.dat"))); // 流过滤器
+            int i = 123456; // 十六进制数
+            out.writeInt(i);
+            out.close();
+
+            DataInputStream in = new DataInputStream(
+                    new BufferedInputStream(
+                            new FileInputStream("a.dat")));
+            int j = in.readInt();
+            System.out.println(j);
+            in.close();
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+        // System.out.println(i);
+
+
+
+    }
+}
+
+```
+
+### 文件流
+
+* `FileInputStream`
+* `FileOutputStream`
+* 对文件作读写操作
+* 实际工程中已经较少使用
+  * 更常使用的是以在内存数据或通信数据上建立的流，如数据库的二进制数据读写或网络端口通信
+  * 具体的文件读写有更专业的类，比如配置文件和日志文件
+
+
+
+### 阻塞/非阻塞
+
+* `read()`函数是阻塞的，在读到所需的内容之前会停下来等
+
+  * 使用`read()`的更“高级”的函数，如`nextInt()`, `readLine()`都是这样
+  * 所以常用单独的线程来做`socket`读的等待，或使用`nio`的`channel`选择机制
+
+* 对于`socket`，可以设置`SO`时间
+
+  `setSOTimeout(int timeOut)`
+
+
+
+### 对象串行化
+
+* `ObjectInputStream`类
+  * `readObject()`
+* `ObjectOutputStream`类
+  * `writeObject()`
+* `Serializable`接口
