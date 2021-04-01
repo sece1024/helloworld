@@ -911,3 +911,78 @@ public class ReadDemo01 {
 * `ObjectOutputStream`类
   * `writeObject()`
 * `Serializable`接口
+
+
+
+# 知识点笔记
+
+## 关于调试
+
+### StackTraceElement
+
+#### 方法
+
+1. `getMethodName()`	获取方法名
+2. `getFileName()`        获取文件名
+3. `getLineNumber()`    获取行号
+
+
+
+简述：`StackTrace`用栈的形式保存方法的调用信息
+
+* `StackTraceElement`数组是`StackTrace`中的内容
+
+
+
+使用示例`\Code\src\eual.DateTest01.showDate()`：
+
+```java
+StackTraceElement traceElement = ((new Exception().getStackTrace()))[0]; // 0是当前类的方法，1是调用者的方法
+        System.out.println(traceElement.getMethodName());
+```
+
+输出：`showDate`
+
+*将0改为1则输出调用者 `main`*
+
+---
+
+### 契约式设计
+
+#### 异常(Exception)
+
+> 一般用于处理不受我们控制的不可预见的错误
+
+
+
+#### 断言(Assertion)
+
+> 验证我们在代码中做出的一些假设
+
+
+
+## 关于内存管理
+
+### 垃圾回收
+
+> Java的一个特点就是它不允许修改引用的策略。这种策略使Java能够高效自动地回收垃圾。
+
+
+
+#### 简述
+
+* 内存被声明以后，因为某些原因不需要再使用了，这样的内存被称为垃圾，或者孤儿；
+  * 比如声明了对象a和b，令`a=b`后，a和b指向同一内存空间，而a原先指向的内存将无法被引用，这种对象就叫做“孤儿”
+
+
+
+##### 
+
+
+
+
+
+
+
+
+
