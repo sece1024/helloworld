@@ -37,7 +37,7 @@ class Board:
     def life_or_die(self):
         for i in range(1, self.SIZE - 1):
             for j in range(1, self.SIZE - 1):
-                num = -1
+                num = 0
                 for ii in range(i-1, i+2):
                     num += sum(self.template[ii][j-1:j+2])  # 计算周围一圈白色数目
                 if self.template[i][j] == 1:                # 自己不算在网格内
