@@ -51,6 +51,102 @@ unity版本：`2019.4.15f1c1`
 
 1. 物体点击使用标签+射线
 2. Shader
+3. 鼠标按下，物体轮廓高亮同时显示UI
+
+
+
+---
+
+## 遇到的问题
+
+### [command]与[ClientRpc]
+
+`[command]`命令是客户端发往服务端，实际上是在服务端执行的，`[ClientRpc]`与之相反是在客户端执行，搞清楚这点很重要。
+
+
+
+**有如下代码：**
+
+```c#
+    void Update()
+    {
+        if (isClient && isLocalPlayer)
+        {
+            cmdPlayerMove(); // 这个函数在服务端执行
+            //rpcPlayerMove(transform);
+
+            Vector3 moveDirection = getMoveDirectiom();
+            playerMove(moveDirection);
+        }
+    }
+    // Client -> Server
+    [Command]
+    private void cmdPlayerMove()
+    {
+        Debug.Log("cmdPlayerMove had been called");
+        // 检测键盘，获取移动方向
+        Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); 
+
+        // 移动
+        playerMove(moveDirection);
+
+        // 更新客户端位置
+        rpcPlayerMove(this.transform);
+    }
+```
+
+1. 因为`Player`是在客户端生成的，`if`语句满足，所以会在服务端调用`cmdPlayerMove()`函数。
+   1. 因为`cmdPlayerMove()`函数每帧都会在服务端调用，若在服务端按下键盘，`Player`位置会改变，并且位置参数会通过在客户端执行`cmdPlayerMove()`函数而进行更新，由此而实现画面同步，而且看上去好像是服务端在控制客户端。
+   2. 如果在客户端按下键盘，会在客户端直接改变`Player`位置，但此时服务端没收到通知，所以只有客户端的画面会发生变化。
+
+
+
+**修改后的代码：**
+
+```C#
+    void Update()
+    {
+        if (isClient && isLocalPlayer)
+        {
+            
+            //rpcPlayerMove(transform);
+
+            Vector3 moveDirection = getMoveDirectiom();
+            cmdPlayerMove(moveDirection); // 这个函数在服务端执行
+            
+        }
+        else if (isServer)
+        {
+            // 在服务端按下键盘，直接位移然后更新客户端的位置
+            playerMove(getMoveDirectiom());
+            rpcPlayerMove(this.transform);
+        }
+            // Client -> Server
+    [Command]
+    private void cmdPlayerMove(Vector3 moveDire)
+    {
+        Debug.Log("cmdPlayerMove had been called");
+        // 检测键盘，获取移动方向
+        // Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); 
+
+        // 移动
+        playerMove(moveDire);
+
+        // 更新客户端位置
+        rpcPlayerMove(this.transform);
+    }
+
+    [ClientRpc]
+    private void rpcPlayerMove(Transform t)
+    {
+        Debug.Log("rpcPlayerMove had been called");
+        // 更新客户端玩家位置
+        transform.position = t.position;
+    }
+```
+
+2. 如果在客户端，会通过键盘获取移动方向，将这方向发送给服务端移动，再在客户端更新位置
+3. 如果在服务端，会直接获取方向然后移动，更新客户端位置。
 
 # 要求
 
