@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- html结构 -->
+    <div id="app">
+        <!-- <button @doIt>Do It</button> -->
+        <input type="button" value="v-on指令" v-on:click="doIt">
+        <button @click="doIt">简写</button>
+
+        <input type="button" value="双击" @dblclick="doIt">
+        <input type="button" value="鼠标移入" @monseenter="me">
+
+        <h2 @click="changeFood">{{food}}</h2>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script> 
+        var app = new Vue({
+            el:"#app",
+            data:{
+                food:"西兰花"
+            },
+            methods:{
+                doIt:function(){
+                    alert("Done");
+                },
+                me:function(){
+                   console.log("mouseenter");
+                },
+                changeFood:function(){
+                    // console.log(this.food);
+                    this.food+="?";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

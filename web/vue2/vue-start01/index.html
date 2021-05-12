@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue基础</title>
+</head>
+<body>
+    <!-- {{message}} -->
+    <div id="app01">
+        <!-- 插值表达式 -->
+        <!-- {{ message }}
+        <br> -->
+        <h1>{{school.name}}</h1>
+        <h2>{{school.minName}}</h2>
+        <ul>
+            <li>{{campus[0]}}</li>
+            <li>{{campus[1]}}</li>
+        </ul>
+        <span>{{email}}</span>   
+
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app01 = new Vue({
+        // el -> element，挂载点
+        // el:".app"//类选择器
+        el:"#app01",    // id选择器，推荐使用
+        data:{
+            message:"Hello Vue!",
+            email:"sece1024@gmail.com",
+            school:{
+                name:"武汉纺织大学",
+                minName:"WTU",
+                
+            },
+            campus:["南湖","阳光"]
+        }
+    })
+</script>
+</body>
+</html>
