@@ -1,5 +1,7 @@
 # 入门
 
+**记得在 `cmd` 管理员模式下使用 `npm`**
+
 https://vuejs.org/v2/guide/
 
 ## 安装
@@ -11,6 +13,14 @@ https://www.jianshu.com/p/cf70a7fa04c7
 https://www.runoob.com/w3cnote/vue2-start-coding.html
 
 
+
+## 创建
+
+### 根据模板创建项目
+
+> vue init webpack-simple 工程名字<工程名字不能用中文>
+> 或者创建 vue1.0 的项目
+> vue init webpack-simple#1.0 工程名字<工程名字不能用中文>
 
 ```
 npm config set prefix "D:\development\nodejs\node_global"
@@ -50,7 +60,15 @@ var app = new Vue({
 })
 ```
 
-### 鼠标悬浮
+
+
+## 指令
+
+### 属性绑定
+
+#### v-bind
+
+**鼠标悬浮**
 
 ```html
 <div id="app-2">
@@ -71,6 +89,10 @@ var app2 = new Vue({
 ```
 
 ### 条件与循环
+
+#### 
+
+
 
 #### v-if
 
@@ -146,3 +168,4 @@ var app5 = new Vue({
 ```
 
 点击按钮将文本反转。
+
