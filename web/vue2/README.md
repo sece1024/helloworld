@@ -169,3 +169,57 @@ var app5 = new Vue({
 
 点击按钮将文本反转。
 
+## 懒加载
+
+[vue路由懒加载及组件懒加载 - z_xun - 博客园 (cnblogs.com)](https://www.cnblogs.com/xiaoxiaoxun/p/11001884.html)
+
+## 模板字符串
+
+[字符串模板${}失效_weixin_30767921的博客-CSDN博客](https://blog.csdn.net/weixin_30767921/article/details/95232691)
+
+```js
+`@/components/${sub.componentName}`
+// 错误用法
+'@/components/${sub.componentName}'
+```
+
+## 页面设计-美化
+
+* element-ui
+
+  [Vue + Vue-router + Element-ui 搭建一个非常简单的dashboard demo - SegmentFault 思否](https://segmentfault.com/a/1190000012015667)
+
+# 模块引入
+
+**需要进入vue项目所在目录，并且是cmd管理员模式**
+
+## router
+
+[安装 | Vue Router (vuejs.org)](https://router.vuejs.org/zh/installation.html)
+
+* npm
+
+```bash
+npm install vue-router
+```
+
+## element
+
+[组件 | Element](https://element.eleme.cn/#/zh-CN/component/installation)
+
+
+
+* npm安装
+
+`npm i element-ui -S`
+
+* 对于已经创建的项目
+
+```npm install --save element-ui```
+
+
+
+# vue与springboot连接
+
+[Springboot Vue Login(从零开始实现Springboot+Vue登录)_XiaoJL博客-CSDN博客_springboot vue](https://blog.csdn.net/xiaojinlai123/article/details/90694372)
+
