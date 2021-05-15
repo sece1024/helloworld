@@ -189,7 +189,7 @@ var app5 = new Vue({
 
   [Vue + Vue-router + Element-ui 搭建一个非常简单的dashboard demo - SegmentFault 思否](https://segmentfault.com/a/1190000012015667)
 
-# 模块引入
+# 模块
 
 **需要进入vue项目所在目录，并且是cmd管理员模式**
 
@@ -202,6 +202,39 @@ var app5 = new Vue({
 ```bash
 npm install vue-router
 ```
+
+### 重定向
+
+```js
+   {
+        path: '/',
+        redirect: '/home' //重定向
+    },
+```
+
+
+
+### 多路由
+
+```js
+    {
+        path: '/',
+        name: 'RouterTest',
+        meta: { title: 'Test' },
+        components: {
+            default: () =>
+                import ('@/components/MyLogin'),
+            home: () =>
+                import ('@/components/Home')
+
+        }
+
+    }
+```
+
+
+
+
 
 ## element
 
