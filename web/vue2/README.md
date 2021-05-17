@@ -203,6 +203,14 @@ var app5 = new Vue({
 npm install vue-router
 ```
 
+* 已创建项目
+
+```bash
+npm install vue-router --save
+```
+
+
+
 ### 重定向
 
 ```js
@@ -249,6 +257,28 @@ npm install vue-router
 * 对于已经创建的项目
 
 ```npm install --save element-ui```
+
+## axios
+
+> axios回调函数中的`this`值会改变，应该声明一个变量保存它`var that = this`
+
+*使用示例：*
+
+```js
+      this.$axios
+        .get("https://autumnfish.cn/api/joke/list?num=6")
+        .then((response) => {
+          var that = this; //将指向vue对象的this赋值给外部方法定义的属性，然后在内部方法中使用该属性
+          // 否则this指向的内容会变，无法修改this.jokes的内容
+
+          that.jokes = response.data.jokes;
+          // console.log("jokes", this.jokes);
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("网络错误，不能访问");
+        });
+```
 
 
 
