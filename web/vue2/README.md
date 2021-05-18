@@ -173,6 +173,34 @@ var app5 = new Vue({
 
 [vue路由懒加载及组件懒加载 - z_xun - 博客园 (cnblogs.com)](https://www.cnblogs.com/xiaoxiaoxun/p/11001884.html)
 
+
+
+*()=>import()出错问题：*
+
+[vue-router 按需加载 component: () => import() 出现错误_江城宴的博客-CSDN博客](https://blog.csdn.net/hong10086/article/details/89684772)
+
+### 路径名使用@开头
+
+[vue使用@路径引入_马优晨-CSDN博客](https://blog.csdn.net/qq_24147051/article/details/106557242)
+
+起别名：
+
+`npm  install  path  --save`
+
+在`webpack.config.js`文件中
+
+```js
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+            '@': resolve('src')
+        },
+        extensions: ['*', '.js', '.vue', '.json']
+    }
+```
+
+
+
 ## 模板字符串
 
 [字符串模板${}失效_weixin_30767921的博客-CSDN博客](https://blog.csdn.net/weixin_30767921/article/details/95232691)
@@ -260,6 +288,10 @@ npm install vue-router --save
 
 ## axios
 
+安装：[11.Vue安装Axios及使用 - _xintao - 博客园 (cnblogs.com)](https://www.cnblogs.com/xintao/p/10751806.html)
+
+`npm install axios --save-dev`
+
 > axios回调函数中的`this`值会改变，应该声明一个变量保存它`var that = this`
 
 *使用示例：*
@@ -286,3 +318,12 @@ npm install vue-router --save
 
 [Springboot Vue Login(从零开始实现Springboot+Vue登录)_XiaoJL博客-CSDN博客_springboot vue](https://blog.csdn.net/xiaojinlai123/article/details/90694372)
 
+
+
+# 打包到nginx
+
+[nginx: download](http://nginx.org/en/download.html)
+
+[Nginx+win10安装配置 - 蛋片鸡 - 博客园 (cnblogs.com)](https://www.cnblogs.com/FHC1994/p/11962468.html)
+
+[vue项目部署到nginx_优雅的王德奥的博客-CSDN博客_vue部署nginx](https://blog.csdn.net/weixin_42565137/article/details/90577950?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control)
