@@ -1,4 +1,4 @@
-# 入门
+# Vue学习笔记
 
 **记得在 `cmd` 管理员模式下使用 `npm`**
 
@@ -189,7 +189,7 @@ var app5 = new Vue({
 
   [Vue + Vue-router + Element-ui 搭建一个非常简单的dashboard demo - SegmentFault 思否](https://segmentfault.com/a/1190000012015667)
 
-# 模块
+## 模块
 
 **需要进入vue项目所在目录，并且是cmd管理员模式**
 
@@ -260,6 +260,8 @@ npm install vue-router --save
 
 ## axios
 
+[使用 axios 访问 API — Vue.js (vuejs.org)](https://cn.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html)
+
 > axios回调函数中的`this`值会改变，应该声明一个变量保存它`var that = this`
 
 *使用示例：*
@@ -282,7 +284,7 @@ npm install vue-router --save
 
 
 
-# vue与springboot连接
+## vue与springboot连接
 
 [Springboot Vue Login(从零开始实现Springboot+Vue登录)_XiaoJL博客-CSDN博客_springboot vue](https://blog.csdn.net/xiaojinlai123/article/details/90694372)
 
