@@ -208,6 +208,18 @@ let result = operation(4.0)	// result will be -4.0
 
 
 
+## Thrown Errors
+
+```swift
+func save() throws
+
+do{
+    try context.save()
+}catch let error{
+    throw error
+}
+```
+
 
 
 # iOS
