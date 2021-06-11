@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cities View Controller-->
+        <scene sceneID="gvx-GZ-O4S">
+            <objects>
+                <tableViewController id="tD2-e8-jDY" customClass="CitiesViewController" customModule="iOS_weather_hgx" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fvd-Mq-ENj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="rW0-dD-oh9">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="城市" id="cZz-WL-SKn">
+                                    <barButtonItem key="leftBarButtonItem" title="返回" id="47M-ou-2Qs">
+                                        <connections>
+                                            <segue destination="ojB-tE-FjW" kind="show" id="9kw-iT-nkJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" title="保存" id="R1a-Iy-ihj">
+                                        <connections>
+                                            <action selector="save:" destination="tD2-e8-jDY" id="BI0-24-4kV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="LQ1-EI-OaY">
+                            <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="CellIdentifier" id="YCf-jB-OxG">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YCf-jB-OxG" id="iUf-3A-fUl">
+                                    <rect key="frame" x="0.0" y="0.0" width="336" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tD2-e8-jDY" id="f8P-nP-LBb"/>
+                            <outlet property="delegate" destination="tD2-e8-jDY" id="IrD-9j-7Hm"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="GoToHome" id="vH6-28-sT1"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZZ-s7-Xj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2366" y="105"/>
+        </scene>
+        <!--Provinces Table View Controller-->
+        <scene sceneID="c4p-3r-sej">
+            <objects>
+                <tableViewController id="ojB-tE-FjW" customClass="ProvincesTableViewController" customModule="iOS_weather_hgx" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r5P-pj-qYO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="q1P-2A-Dxm">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="省份" id="7xM-t8-Cwt">
+                                    <barButtonItem key="leftBarButtonItem" title="取消" id="mTC-MI-M7I">
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="MnS-US-vBP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PROVINCE" id="MOU-bO-voB">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MOU-bO-voB" id="d3q-ss-Z7l">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="tD2-e8-jDY" kind="show" identifier="ShowSelectedProvince" id="cut-lt-GIm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ojB-tE-FjW" id="VOe-1K-SeH"/>
+                            <outlet property="delegate" destination="ojB-tE-FjW" id="ZAV-7A-1Fe"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2xI-KD-2nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1345" y="-374"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_weather_hgx" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yVc-DU-pC5">
+                                <rect key="frame" x="29" y="100" width="317" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-ao-P9x">
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="关注"/>
+                                        <connections>
+                                            <segue destination="ojB-tE-FjW" kind="presentation" id="fuV-fj-ZHu"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="城市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTb-cl-2FH">
+                                        <rect key="frame" x="116" y="0.0" width="85" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iak-Wb-9Ks">
+                                        <rect key="frame" x="231" y="0.0" width="86" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="切换"/>
+                                        <connections>
+                                            <segue destination="vn5-9B-d0K" kind="presentation" id="eqs-Zs-5TZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aG6-Wr-8IS">
+                                <rect key="frame" x="128" y="358" width="119" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onGet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tsy-zX-czZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yVc-DU-pC5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="Edv-K0-oj0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yVc-DU-pC5" secondAttribute="trailing" constant="13" id="HbM-bD-w4c"/>
+                            <constraint firstItem="yVc-DU-pC5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="hyt-xe-EOV"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="qTb-cl-2FH" id="eWb-ki-vAW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-364" y="187.55622188905548"/>
+        </scene>
+        <!--Picker View Controller-->
+        <scene sceneID="5EQ-kw-LXM">
+            <objects>
+                <viewController id="vn5-9B-d0K" customClass="PickerViewController" customModule="iOS_weather_hgx" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BGu-uV-XYA"/>
+                        <viewControllerLayoutGuide type="bottom" id="N7E-Bm-cY2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JLy-e3-iLF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6eM-UT-8fk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="选择当前城市" id="lsb-y8-RHL">
+                                        <barButtonItem key="leftBarButtonItem" title="取消" id="C8k-YA-yXH">
+                                            <connections>
+                                                <action selector="onCancel:" destination="vn5-9B-d0K" id="XCf-RD-frX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="切换" id="RWP-xT-Csp">
+                                            <connections>
+                                                <action selector="onSave:" destination="vn5-9B-d0K" id="mIm-uo-JEz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjK-mx-1C4">
+                                <rect key="frame" x="28" y="109" width="319" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N7E-Bm-cY2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fjK-mx-1C4" secondAttribute="bottom" constant="8" symbolic="YES" id="JOn-tf-b0O"/>
+                            <constraint firstItem="fjK-mx-1C4" firstAttribute="leading" secondItem="JLy-e3-iLF" secondAttribute="leadingMargin" constant="12" id="LnY-fB-nUU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fjK-mx-1C4" secondAttribute="trailing" constant="12" id="YkL-L4-5CI"/>
+                            <constraint firstItem="fjK-mx-1C4" firstAttribute="top" secondItem="BGu-uV-XYA" secondAttribute="bottom" constant="89" id="eLc-k6-9TG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="fjK-mx-1C4" id="OV6-Tl-Z4l"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="FromCityChoiceToHome" id="Xvh-8C-LIP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nT0-Pu-GW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576.79999999999995" y="219.94002998500753"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fuV-fj-ZHu"/>
+        <segue reference="Xvh-8C-LIP"/>
+    </inferredMetricsTieBreakers>
+</document>

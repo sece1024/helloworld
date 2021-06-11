@@ -222,12 +222,74 @@ do{
 
 
 
-# iOS
+# iOS-期末
 
-## tianqi
+## 界面
+
+### 城市选择界面
+
+* 主要变量
+
+  * listCities: [String] | 当前省所有城市名称，在省份选择界面赋值
+  * provinceName: String | 当前选择的省名，同上
+  * cityBl = CityBL() | 业务逻辑对象
+  *  citiesBeFocusedNow: [String] | 当前被关注的城市列表
+
+* 方法
+
+  * `viewDidLoad()` | 初始化`citiesBeFocusedNow`，获取当前被关注的所有城市
+  * `save()` | 调用`cityBl`更新被关注城市
+  * `tableView(cellForRowAt)` | 设置单元格列数、内容、复选标记
+  * `tableView(didSelectRowAt)` | 点击城市后，改变被关注城市列表
+
+  ```swift
+  // 如果当前城市已被选中，则取消其复选标记，从城市序号列表和城市名称列表移除对应城市
+  // 否则添加标记，在列表添加对应城市名称和序号
+  ```
+
+  
+
+### 城市切换界面
+
+* 主要组件 `UIPickerView`
+* 主要变量
+  * cityBl: CityBL
+  * cityFocusList: [String]! | 当前被关注的城市列表
+* 方法
+  * `viewDidLoad()` | 初始化数据，使选择框指向当前关注的城市
+  * `onSave()` | 点击保存按钮后，切换当前关注城市
+  * `onCancel()` | 返回
+  * `numberOfComponents()` | 设置选择框列数
+  * `pickerView()` | 设置选择框行数和内容
+
+## 实现
+
+### 天气查询
+
+```swift
+//        let url = "https://v0.yiketianqi.com/api?version=v61&appid=38167911&appsecret=DuzVen06"
+//        
+//        Http.request(method: .GET, url: url, params: ["a":"list","c":"data","type":1], complete: {r in
+//            
+//            print("请求结果：",r)
+//            
+//        }, error:{error in
+//            
+//            print("请求出错了:",error.debugDescription)
+//            
+//        })
+```
+
+
+
+
+
+## 参考文档
+
+### 博客
 
 [(3条消息) 基于Swift的简易iOS天气APP_林大夕可的博客-CSDN博客](https://blog.csdn.net/Sherlooock/article/details/107488658?ops_request_misc=%7B%22request%5Fid%22%3A%22162252443616780357280024%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&request_id=162252443616780357280024&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-107488658.first_rank_v2_pc_rank_v29&utm_term=iOS+天气app+swift&spm=1018.2226.3001.4187)
 
 ### api
 
-http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=101110101&imei=e32c8a29d0e8633283737f5d9f381d47&device=HM2013023&miuiVersion=JHBCNBD16.0&modDevice=&source=miuiWeatherApp
+[免费实况天气接口API开发指南 未来一天天气预报api - 天气API (tianqiapi.com)](http://www.tianqiapi.com/index/doc?version=v6)
