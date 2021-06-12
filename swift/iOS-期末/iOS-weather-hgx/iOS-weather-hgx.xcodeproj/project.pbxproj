@@ -12,6 +12,14 @@
 		0071B0EA2671F81400D2D1C7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0071B0E92671F81400D2D1C7 /* libsqlite3.tbd */; };
 		0071B0EE2671FE8C00D2D1C7 /* CityBL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B0ED2671FE8C00D2D1C7 /* CityBL.swift */; };
 		0071B0F0267210E600D2D1C7 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B0EF267210E600D2D1C7 /* PickerViewController.swift */; };
+		007821872674D3E000FCA5F5 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007821862674D3E000FCA5F5 /* Weather.swift */; };
+		007821912674EA6900FCA5F5 /* lei.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218A2674EA6900FCA5F5 /* lei.png */; };
+		007821922674EA6900FCA5F5 /* qing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218B2674EA6900FCA5F5 /* qing.png */; };
+		007821932674EA6900FCA5F5 /* shachen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218C2674EA6900FCA5F5 /* shachen.png */; };
+		007821942674EA6900FCA5F5 /* wu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218D2674EA6900FCA5F5 /* wu.png */; };
+		007821952674EA6900FCA5F5 /* xiaoyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218E2674EA6900FCA5F5 /* xiaoyu.png */; };
+		007821962674EA6900FCA5F5 /* xue.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218F2674EA6900FCA5F5 /* xue.png */; };
+		007821972674EA6900FCA5F5 /* yun.png in Resources */ = {isa = PBXBuildFile; fileRef = 007821902674EA6900FCA5F5 /* yun.png */; };
 		00B8FA84266E0E2D004F7255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B8FA83266E0E2D004F7255 /* AppDelegate.swift */; };
 		00B8FA86266E0E2D004F7255 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B8FA85266E0E2D004F7255 /* ViewController.swift */; };
 		00B8FA8B266E0E2D004F7255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B8FA8A266E0E2D004F7255 /* Assets.xcassets */; };
@@ -31,6 +39,14 @@
 		0071B0EB2671F84B00D2D1C7 /* Weather-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weather-Bridging-Header.h"; sourceTree = "<group>"; };
 		0071B0ED2671FE8C00D2D1C7 /* CityBL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBL.swift; sourceTree = "<group>"; };
 		0071B0EF267210E600D2D1C7 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		007821862674D3E000FCA5F5 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		0078218A2674EA6900FCA5F5 /* lei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lei.png; sourceTree = "<group>"; };
+		0078218B2674EA6900FCA5F5 /* qing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qing.png; sourceTree = "<group>"; };
+		0078218C2674EA6900FCA5F5 /* shachen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shachen.png; sourceTree = "<group>"; };
+		0078218D2674EA6900FCA5F5 /* wu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wu.png; sourceTree = "<group>"; };
+		0078218E2674EA6900FCA5F5 /* xiaoyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaoyu.png; sourceTree = "<group>"; };
+		0078218F2674EA6900FCA5F5 /* xue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xue.png; sourceTree = "<group>"; };
+		007821902674EA6900FCA5F5 /* yun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yun.png; sourceTree = "<group>"; };
 		00B8FA80266E0E2D004F7255 /* iOS-weather-hgx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-weather-hgx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B8FA83266E0E2D004F7255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00B8FA85266E0E2D004F7255 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +76,7 @@
 		0071B0E12671F1BA00D2D1C7 /* PersistenceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				007821882674EA6900FCA5F5 /* icon-image */,
 				0071B0E52671F3F400D2D1C7 /* dao */,
 				0071B0E22671F1F200D2D1C7 /* domain */,
 				0071B0EB2671F84B00D2D1C7 /* Weather-Bridging-Header.h */,
@@ -71,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				0071B0E32671F21300D2D1C7 /* City.swift */,
+				007821862674D3E000FCA5F5 /* Weather.swift */,
 			);
 			name = domain;
 			sourceTree = "<group>";
@@ -97,6 +115,28 @@
 				0071B0ED2671FE8C00D2D1C7 /* CityBL.swift */,
 			);
 			name = BusinessLayer;
+			sourceTree = "<group>";
+		};
+		007821882674EA6900FCA5F5 /* icon-image */ = {
+			isa = PBXGroup;
+			children = (
+				007821892674EA6900FCA5F5 /* apple */,
+			);
+			path = "icon-image";
+			sourceTree = "<group>";
+		};
+		007821892674EA6900FCA5F5 /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				0078218A2674EA6900FCA5F5 /* lei.png */,
+				0078218B2674EA6900FCA5F5 /* qing.png */,
+				0078218C2674EA6900FCA5F5 /* shachen.png */,
+				0078218D2674EA6900FCA5F5 /* wu.png */,
+				0078218E2674EA6900FCA5F5 /* xiaoyu.png */,
+				0078218F2674EA6900FCA5F5 /* xue.png */,
+				007821902674EA6900FCA5F5 /* yun.png */,
+			);
+			path = apple;
 			sourceTree = "<group>";
 		};
 		00B8FA77266E0E2D004F7255 = {
@@ -196,10 +236,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007821962674EA6900FCA5F5 /* xue.png in Resources */,
+				007821942674EA6900FCA5F5 /* wu.png in Resources */,
+				007821932674EA6900FCA5F5 /* shachen.png in Resources */,
+				007821912674EA6900FCA5F5 /* lei.png in Resources */,
 				00B8FA8E266E0E2D004F7255 /* LaunchScreen.storyboard in Resources */,
 				00E212C02671BD8100D128F9 /* Main.storyboard in Resources */,
+				007821972674EA6900FCA5F5 /* yun.png in Resources */,
+				007821922674EA6900FCA5F5 /* qing.png in Resources */,
 				00E212B72671A85E00D128F9 /* city2.json in Resources */,
 				00E212B92671AF2B00D128F9 /* city.plist in Resources */,
+				007821952674EA6900FCA5F5 /* xiaoyu.png in Resources */,
 				00B8FA8B266E0E2D004F7255 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +262,7 @@
 				00E212BD2671B81200D128F9 /* CitiesViewController.swift in Sources */,
 				0071B0E42671F21300D2D1C7 /* City.swift in Sources */,
 				0071B0F0267210E600D2D1C7 /* PickerViewController.swift in Sources */,
+				007821872674D3E000FCA5F5 /* Weather.swift in Sources */,
 				00E212BB2671B51E00D128F9 /* ProvincesTableViewController.swift in Sources */,
 				00B8FA84266E0E2D004F7255 /* AppDelegate.swift in Sources */,
 				0071B0E72671F41000D2D1C7 /* CityDAO.swift in Sources */,

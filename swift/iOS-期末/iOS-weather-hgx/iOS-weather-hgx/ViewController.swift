@@ -35,7 +35,10 @@ class ViewController: UIViewController {
         
                 Http.request(method: .GET, url: url, params: ["a":"list","c":"data","type":1], complete: {r in
         
-                    print("请求结果：",r)
+//                    print("请求结果：",r)
+                    let temp = self.jsonStrToDic(str: r)
+                    self.dicToWeatherDic(nsDic: temp)
+                    
         
                 }, error:{error in
         
@@ -49,6 +52,29 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func jsonStrToDic(str :String)->NSDictionary{
+        let jsonData = str.data(using: .utf8)
+        
+        do{
+            let jsonObj = try! JSONSerialization.jsonObject(with: jsonData!, options: .mutableContainers) as! NSDictionary
+//            for k in jsonObj.allKeys{
+//                print("\(k)\t\(jsonObj[k]!)")
+//            }
+            return jsonObj
+        }
+        
+    }
+    func dicToWeatherDic(nsDic: NSDictionary) /*-> Dictionary<String, String>*/{
+        var dic = Dictionary<String, String>()
+        for index in 0...nsDic.count - 2{
+            dic[nsDic.allKeys[index] as! String] = (nsDic.allValues[index] as! String)
+        }
+        
+//        return dic
+        let wea = Weather(dic: dic)
+        print("wea.weaDic = \(wea.weaDic)")
     }
 
     func testReadCityPlist(){
