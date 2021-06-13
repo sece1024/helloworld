@@ -13,18 +13,25 @@
 		0071B0EE2671FE8C00D2D1C7 /* CityBL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B0ED2671FE8C00D2D1C7 /* CityBL.swift */; };
 		0071B0F0267210E600D2D1C7 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B0EF267210E600D2D1C7 /* PickerViewController.swift */; };
 		007821872674D3E000FCA5F5 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007821862674D3E000FCA5F5 /* Weather.swift */; };
-		007821912674EA6900FCA5F5 /* lei.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218A2674EA6900FCA5F5 /* lei.png */; };
-		007821922674EA6900FCA5F5 /* qing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218B2674EA6900FCA5F5 /* qing.png */; };
-		007821932674EA6900FCA5F5 /* shachen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218C2674EA6900FCA5F5 /* shachen.png */; };
-		007821942674EA6900FCA5F5 /* wu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218D2674EA6900FCA5F5 /* wu.png */; };
-		007821952674EA6900FCA5F5 /* xiaoyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218E2674EA6900FCA5F5 /* xiaoyu.png */; };
-		007821962674EA6900FCA5F5 /* xue.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078218F2674EA6900FCA5F5 /* xue.png */; };
-		007821972674EA6900FCA5F5 /* yun.png in Resources */ = {isa = PBXBuildFile; fileRef = 007821902674EA6900FCA5F5 /* yun.png */; };
 		00B8FA84266E0E2D004F7255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B8FA83266E0E2D004F7255 /* AppDelegate.swift */; };
 		00B8FA86266E0E2D004F7255 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B8FA85266E0E2D004F7255 /* ViewController.swift */; };
 		00B8FA8B266E0E2D004F7255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B8FA8A266E0E2D004F7255 /* Assets.xcassets */; };
 		00B8FA8E266E0E2D004F7255 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B8FA8C266E0E2D004F7255 /* LaunchScreen.storyboard */; };
 		00B8FA96266E0E87004F7255 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B8FA95266E0E87004F7255 /* Http.swift */; };
+		00C9BB982675A70D00815D11 /* Weather7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C9BB972675A70D00815D11 /* Weather7.swift */; };
+		00C9BBA72675B77100815D11 /* duoyun.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BB9A2675B77100815D11 /* duoyun.png */; };
+		00C9BBA82675B77100815D11 /* lei.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BB9B2675B77100815D11 /* lei.png */; };
+		00C9BBA92675B77100815D11 /* leizhenyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BB9C2675B77100815D11 /* leizhenyu.png */; };
+		00C9BBAA2675B77100815D11 /* qing.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BB9D2675B77100815D11 /* qing.png */; };
+		00C9BBAB2675B77100815D11 /* shachen.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BB9E2675B77100815D11 /* shachen.png */; };
+		00C9BBAC2675B77100815D11 /* wu.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BB9F2675B77100815D11 /* wu.png */; };
+		00C9BBAD2675B77100815D11 /* xiaoyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BBA02675B77100815D11 /* xiaoyu.png */; };
+		00C9BBAE2675B77100815D11 /* xue.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BBA12675B77100815D11 /* xue.png */; };
+		00C9BBAF2675B77100815D11 /* yin.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BBA22675B77100815D11 /* yin.png */; };
+		00C9BBB02675B77100815D11 /* yu.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BBA32675B77100815D11 /* yu.png */; };
+		00C9BBB12675B77100815D11 /* yujiaxue.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BBA42675B77100815D11 /* yujiaxue.png */; };
+		00C9BBB22675B77100815D11 /* yun.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BBA52675B77100815D11 /* yun.png */; };
+		00C9BBB32675B77100815D11 /* zhenyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C9BBA62675B77100815D11 /* zhenyu.png */; };
 		00E212B72671A85E00D128F9 /* city2.json in Resources */ = {isa = PBXBuildFile; fileRef = 00E212B62671A85E00D128F9 /* city2.json */; };
 		00E212B92671AF2B00D128F9 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00E212B82671AF2B00D128F9 /* city.plist */; };
 		00E212BB2671B51E00D128F9 /* ProvincesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E212BA2671B51E00D128F9 /* ProvincesTableViewController.swift */; };
@@ -40,13 +47,6 @@
 		0071B0ED2671FE8C00D2D1C7 /* CityBL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBL.swift; sourceTree = "<group>"; };
 		0071B0EF267210E600D2D1C7 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		007821862674D3E000FCA5F5 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		0078218A2674EA6900FCA5F5 /* lei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lei.png; sourceTree = "<group>"; };
-		0078218B2674EA6900FCA5F5 /* qing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qing.png; sourceTree = "<group>"; };
-		0078218C2674EA6900FCA5F5 /* shachen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shachen.png; sourceTree = "<group>"; };
-		0078218D2674EA6900FCA5F5 /* wu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wu.png; sourceTree = "<group>"; };
-		0078218E2674EA6900FCA5F5 /* xiaoyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaoyu.png; sourceTree = "<group>"; };
-		0078218F2674EA6900FCA5F5 /* xue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xue.png; sourceTree = "<group>"; };
-		007821902674EA6900FCA5F5 /* yun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yun.png; sourceTree = "<group>"; };
 		00B8FA80266E0E2D004F7255 /* iOS-weather-hgx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-weather-hgx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B8FA83266E0E2D004F7255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00B8FA85266E0E2D004F7255 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +54,20 @@
 		00B8FA8D266E0E2D004F7255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00B8FA8F266E0E2D004F7255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00B8FA95266E0E87004F7255 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
+		00C9BB972675A70D00815D11 /* Weather7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather7.swift; sourceTree = "<group>"; };
+		00C9BB9A2675B77100815D11 /* duoyun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duoyun.png; sourceTree = "<group>"; };
+		00C9BB9B2675B77100815D11 /* lei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lei.png; sourceTree = "<group>"; };
+		00C9BB9C2675B77100815D11 /* leizhenyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leizhenyu.png; sourceTree = "<group>"; };
+		00C9BB9D2675B77100815D11 /* qing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qing.png; sourceTree = "<group>"; };
+		00C9BB9E2675B77100815D11 /* shachen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shachen.png; sourceTree = "<group>"; };
+		00C9BB9F2675B77100815D11 /* wu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wu.png; sourceTree = "<group>"; };
+		00C9BBA02675B77100815D11 /* xiaoyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaoyu.png; sourceTree = "<group>"; };
+		00C9BBA12675B77100815D11 /* xue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xue.png; sourceTree = "<group>"; };
+		00C9BBA22675B77100815D11 /* yin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yin.png; sourceTree = "<group>"; };
+		00C9BBA32675B77100815D11 /* yu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yu.png; sourceTree = "<group>"; };
+		00C9BBA42675B77100815D11 /* yujiaxue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yujiaxue.png; sourceTree = "<group>"; };
+		00C9BBA52675B77100815D11 /* yun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yun.png; sourceTree = "<group>"; };
+		00C9BBA62675B77100815D11 /* zhenyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhenyu.png; sourceTree = "<group>"; };
 		00E212B62671A85E00D128F9 /* city2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city2.json; sourceTree = "<group>"; };
 		00E212B82671AF2B00D128F9 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		00E212BA2671B51E00D128F9 /* ProvincesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvincesTableViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +103,7 @@
 			children = (
 				0071B0E32671F21300D2D1C7 /* City.swift */,
 				007821862674D3E000FCA5F5 /* Weather.swift */,
+				00C9BB972675A70D00815D11 /* Weather7.swift */,
 			);
 			name = domain;
 			sourceTree = "<group>";
@@ -120,23 +135,9 @@
 		007821882674EA6900FCA5F5 /* icon-image */ = {
 			isa = PBXGroup;
 			children = (
-				007821892674EA6900FCA5F5 /* apple */,
+				00C9BB992675B77100815D11 /* yahoo */,
 			);
 			path = "icon-image";
-			sourceTree = "<group>";
-		};
-		007821892674EA6900FCA5F5 /* apple */ = {
-			isa = PBXGroup;
-			children = (
-				0078218A2674EA6900FCA5F5 /* lei.png */,
-				0078218B2674EA6900FCA5F5 /* qing.png */,
-				0078218C2674EA6900FCA5F5 /* shachen.png */,
-				0078218D2674EA6900FCA5F5 /* wu.png */,
-				0078218E2674EA6900FCA5F5 /* xiaoyu.png */,
-				0078218F2674EA6900FCA5F5 /* xue.png */,
-				007821902674EA6900FCA5F5 /* yun.png */,
-			);
-			path = apple;
 			sourceTree = "<group>";
 		};
 		00B8FA77266E0E2D004F7255 = {
@@ -175,6 +176,26 @@
 				0071B0EF267210E600D2D1C7 /* PickerViewController.swift */,
 			);
 			path = "iOS-weather-hgx";
+			sourceTree = "<group>";
+		};
+		00C9BB992675B77100815D11 /* yahoo */ = {
+			isa = PBXGroup;
+			children = (
+				00C9BB9A2675B77100815D11 /* duoyun.png */,
+				00C9BB9B2675B77100815D11 /* lei.png */,
+				00C9BB9C2675B77100815D11 /* leizhenyu.png */,
+				00C9BB9D2675B77100815D11 /* qing.png */,
+				00C9BB9E2675B77100815D11 /* shachen.png */,
+				00C9BB9F2675B77100815D11 /* wu.png */,
+				00C9BBA02675B77100815D11 /* xiaoyu.png */,
+				00C9BBA12675B77100815D11 /* xue.png */,
+				00C9BBA22675B77100815D11 /* yin.png */,
+				00C9BBA32675B77100815D11 /* yu.png */,
+				00C9BBA42675B77100815D11 /* yujiaxue.png */,
+				00C9BBA52675B77100815D11 /* yun.png */,
+				00C9BBA62675B77100815D11 /* zhenyu.png */,
+			);
+			path = yahoo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,17 +257,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				007821962674EA6900FCA5F5 /* xue.png in Resources */,
-				007821942674EA6900FCA5F5 /* wu.png in Resources */,
-				007821932674EA6900FCA5F5 /* shachen.png in Resources */,
-				007821912674EA6900FCA5F5 /* lei.png in Resources */,
 				00B8FA8E266E0E2D004F7255 /* LaunchScreen.storyboard in Resources */,
+				00C9BBB22675B77100815D11 /* yun.png in Resources */,
+				00C9BBAC2675B77100815D11 /* wu.png in Resources */,
+				00C9BBAF2675B77100815D11 /* yin.png in Resources */,
+				00C9BBB12675B77100815D11 /* yujiaxue.png in Resources */,
 				00E212C02671BD8100D128F9 /* Main.storyboard in Resources */,
-				007821972674EA6900FCA5F5 /* yun.png in Resources */,
-				007821922674EA6900FCA5F5 /* qing.png in Resources */,
+				00C9BBAB2675B77100815D11 /* shachen.png in Resources */,
+				00C9BBB02675B77100815D11 /* yu.png in Resources */,
+				00C9BBAA2675B77100815D11 /* qing.png in Resources */,
+				00C9BBA82675B77100815D11 /* lei.png in Resources */,
+				00C9BBB32675B77100815D11 /* zhenyu.png in Resources */,
 				00E212B72671A85E00D128F9 /* city2.json in Resources */,
+				00C9BBA72675B77100815D11 /* duoyun.png in Resources */,
+				00C9BBAD2675B77100815D11 /* xiaoyu.png in Resources */,
+				00C9BBAE2675B77100815D11 /* xue.png in Resources */,
+				00C9BBA92675B77100815D11 /* leizhenyu.png in Resources */,
 				00E212B92671AF2B00D128F9 /* city.plist in Resources */,
-				007821952674EA6900FCA5F5 /* xiaoyu.png in Resources */,
 				00B8FA8B266E0E2D004F7255 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C9BB982675A70D00815D11 /* Weather7.swift in Sources */,
 				00B8FA86266E0E2D004F7255 /* ViewController.swift in Sources */,
 				00E212BD2671B81200D128F9 /* CitiesViewController.swift in Sources */,
 				0071B0E42671F21300D2D1C7 /* City.swift in Sources */,

@@ -11,6 +11,20 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var imgToday: UIImageView!
+    @IBOutlet weak var imgTomorrow: UIImageView!
+    @IBOutlet weak var imgAfterTom: UIImageView!
+    
+    @IBOutlet weak var labelToday: UILabel!
+    @IBOutlet weak var labelTom: UILabel!
+    @IBOutlet weak var labelAfterTom: UILabel!
+    
+    @IBOutlet weak var temToday: UILabel!
+    @IBOutlet weak var temTom: UILabel!
+    @IBOutlet weak var temAfterTom: UILabel!
+    
+    
+    
     var cityBl = CityBL()
     public static var city = City()
 
@@ -27,24 +41,40 @@ class ViewController: UIViewController {
         print("self.city.cityList = \(ViewController.city.cityList)")
         print("cityNow: \(ViewController.city.nowCity)")
         
+        
+        
     }
     
     @IBAction func onGet(_ sender: UIButton) {
+        var wea7: Weather7!
         
-                let url = "http://www.tianqiapi.com/api?version=v6&appid=38167911&appsecret=DuzVen06" + "&city=" + ViewController.city.nowCity
+                let url = "http://www.tianqiapi.com/api?version=v1&appid=38167911&appsecret=DuzVen06" + "&city=" + ViewController.city.nowCity
         
                 Http.request(method: .GET, url: url, params: ["a":"list","c":"data","type":1], complete: {r in
         
-//                    print("请求结果：",r)
-                    let temp = self.jsonStrToDic(str: r)
-                    self.dicToWeatherDic(nsDic: temp)
-                    
+
+                    let temp = self.jsonStrToNsdic(str: r)
+                    wea7 = self.nsDicToWeather7(nsDic: temp)
+//                    self.labelToday.text = "今天～" + (wea7.data[0]["wea"] as! String)
+//                    self.temToday.text = (wea7.data[0]["tem"] as! String)
+//                    let img = (wea7.data[0]["wea_img"] as! String) + ".png"
+//                    self.imgToday.image = UIImage(named: img)
+                    let days = ["今天～", "明天～", "后天～"]
+                    let labels = [self.labelToday, self.labelTom, self.labelAfterTom]
+                    let tems = [self.temToday, self.temTom, self.temAfterTom]
+                    let imgs = [self.imgToday, self.imgTomorrow, self.imgAfterTom]
+                    for index in 0..<3{
+                        labels[index]?.text = (days[index] + (wea7.data[index]["wea"] as! String))
+                        tems[index]?.text = (wea7.data[0]["tem"] as! String)
+                        imgs[index]?.image = UIImage(named: ((wea7.data[0]["wea_img"] as! String) + ".png"))
+                    }
         
                 }, error:{error in
         
                     print("请求出错了:",error.debugDescription)
                     
                 })
+       
     }
     
     
@@ -54,7 +84,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func jsonStrToDic(str :String)->NSDictionary{
+    func jsonStrToNsdic(str :String)->NSDictionary{
         let jsonData = str.data(using: .utf8)
         
         do{
@@ -76,6 +106,39 @@ class ViewController: UIViewController {
         let wea = Weather(dic: dic)
         print("wea.weaDic = \(wea.weaDic)")
     }
+    func nsDicToWeather7(nsDic: NSDictionary) -> Weather7{
+        let wea7 = Weather7(nsDic: nsDic)
+//        print("wea7.info: \(wea7.info)\nwea7.data: \(wea7.data[0])")
+        return wea7
+    }
+    
+    // 根据当前城市名更新天气
+    func updateWeather(){
+        var wea7: Weather7!
+        let url = "http://www.tianqiapi.com/api?version=v1&appid=38167911&appsecret=DuzVen06" + "&city=" + ViewController.city.nowCity
+        
+        Http.request(method: .GET, url: url, params: ["a":"list","c":"data","type":1], complete: {r in
+            
+            let temp = self.jsonStrToNsdic(str: r)
+            wea7 = self.nsDicToWeather7(nsDic: temp)
+            self.labelToday.text = "今天～" + (wea7.data[0]["wea"] as! String)
+            self.temToday.text = (wea7.data[0]["tem"] as! String)
+            let img = (wea7.data[0]["wea_img"] as! String) + ".png"
+            self.imgToday.image = UIImage(named: img)
+            var i = 0
+            for label in [self.labelToday, self.labelTom, self.labelAfterTom]{
+                label?.text = (wea7.data[i]["wea"] as! String)
+                i += 1
+            }
+        
+            
+        }, error:{error in
+            
+            print("请求出错了:",error.debugDescription)
+            
+        })
+    }
+    
 
     func testReadCityPlist(){
 //        let url = Bundle.main.url(forResource: "city", withExtension: "plist")

@@ -164,16 +164,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RLa-EN-7T8">
-                                <rect key="frame" x="29" y="335.5" width="330" height="190"/>
+                                <rect key="frame" x="17" y="335.5" width="342" height="190"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Oyq-or-SI2">
-                                        <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="I02-Ou-kH7">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="k63-bw-R5C">
-                                                        <rect key="frame" x="0.0" y="0.0" width="262" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="274" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FKU-T8-wEy">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -183,7 +183,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天～多云转阵雨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7h-MU-4pP">
-                                                                <rect key="frame" x="52" y="0.0" width="210" height="50"/>
+                                                                <rect key="frame" x="52" y="0.0" width="222" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -191,7 +191,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30°/25°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Od-Nw-V4F">
-                                                        <rect key="frame" x="269" y="0.0" width="61" height="50"/>
+                                                        <rect key="frame" x="281" y="0.0" width="61" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="61" id="nRE-b0-Ztx"/>
                                                         </constraints>
@@ -204,10 +204,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="C5U-Kb-THg">
-                                        <rect key="frame" x="0.0" y="70" width="330" height="50"/>
+                                        <rect key="frame" x="0.0" y="70" width="342" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="OqZ-ep-q1C">
-                                                <rect key="frame" x="0.0" y="0.0" width="262" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="274" height="50"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-XD-oRc">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -217,7 +217,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天～多云转阵雨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcx-Yb-4l5">
-                                                        <rect key="frame" x="52" y="0.0" width="210" height="50"/>
+                                                        <rect key="frame" x="52" y="0.0" width="222" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -225,7 +225,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30°/25°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A28-Wg-8aL">
-                                                <rect key="frame" x="269" y="0.0" width="61" height="50"/>
+                                                <rect key="frame" x="281" y="0.0" width="61" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="61" id="CZE-EF-ALQ"/>
                                                 </constraints>
@@ -236,10 +236,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="qWg-wf-U7Y">
-                                        <rect key="frame" x="0.0" y="140" width="330" height="50"/>
+                                        <rect key="frame" x="0.0" y="140" width="342" height="50"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="2ey-wJ-f21">
-                                                <rect key="frame" x="0.0" y="0.0" width="262" height="50"/>
+                                            <stackView opaque="NO" contentMode="left" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="2ey-wJ-f21">
+                                                <rect key="frame" x="0.0" y="0.0" width="274" height="50"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JpN-SQ-hSv">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -249,7 +249,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天～多云转阵雨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bT-Ku-1rU">
-                                                        <rect key="frame" x="52" y="0.0" width="210" height="50"/>
+                                                        <rect key="frame" x="52" y="0.0" width="222" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -257,7 +257,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30°/25°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnh-Vv-g0c">
-                                                <rect key="frame" x="269" y="0.0" width="61" height="50"/>
+                                                <rect key="frame" x="281" y="0.0" width="61" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="61" id="WyW-ZI-jem"/>
                                                 </constraints>
@@ -269,17 +269,27 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anz-5q-I2U">
+                                <rect key="frame" x="29" y="564" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onGet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N0g-Ew-SC3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="RLa-EN-7T8" firstAttribute="top" secondItem="rDi-gf-Da8" secondAttribute="bottom" constant="60" id="1yd-9t-yrM"/>
+                            <constraint firstItem="anz-5q-I2U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="7U7-yT-sVM"/>
                             <constraint firstItem="RLa-EN-7T8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mTn-LQ-p4x" secondAttribute="bottom" constant="30" id="7Yc-4P-Rtm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RLa-EN-7T8" secondAttribute="trailing" id="AHl-yZ-paQ"/>
                             <constraint firstItem="yVc-DU-pC5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="Edv-K0-oj0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="anz-5q-I2U" secondAttribute="bottom" constant="29" id="Flw-Yf-3CG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yVc-DU-pC5" secondAttribute="trailing" constant="13" id="HbM-bD-w4c"/>
                             <constraint firstItem="rDi-gf-Da8" firstAttribute="top" secondItem="yVc-DU-pC5" secondAttribute="bottom" constant="71" id="N5I-kT-5Ml"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RLa-EN-7T8" secondAttribute="bottom" constant="8" symbolic="YES" id="TLx-9H-LcY"/>
-                            <constraint firstItem="RLa-EN-7T8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="cw4-LD-tLt"/>
+                            <constraint firstItem="RLa-EN-7T8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="1" id="cw4-LD-tLt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rDi-gf-Da8" secondAttribute="trailing" constant="80" id="ddy-yc-pUl"/>
                             <constraint firstItem="yVc-DU-pC5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="hyt-xe-EOV"/>
                             <constraint firstItem="rDi-gf-Da8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="uDP-Jt-o3P"/>
@@ -288,6 +298,15 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="imgAfterTom" destination="JpN-SQ-hSv" id="Bz2-41-zV4"/>
+                        <outlet property="imgToday" destination="FKU-T8-wEy" id="RcT-oG-eKQ"/>
+                        <outlet property="imgTomorrow" destination="lvc-XD-oRc" id="rai-zm-xDe"/>
+                        <outlet property="labelAfterTom" destination="5bT-Ku-1rU" id="SLA-cW-eNA"/>
+                        <outlet property="labelToday" destination="d7h-MU-4pP" id="h0N-5N-h7s"/>
+                        <outlet property="labelTom" destination="Tcx-Yb-4l5" id="Pks-wd-4ZW"/>
+                        <outlet property="temAfterTom" destination="cnh-Vv-g0c" id="3BP-gx-jPx"/>
+                        <outlet property="temToday" destination="8Od-Nw-V4F" id="9UL-Wu-WAj"/>
+                        <outlet property="temTom" destination="A28-Wg-8aL" id="R0Y-Px-0Lr"/>
                         <outlet property="titleLabel" destination="qTb-cl-2FH" id="eWb-ki-vAW"/>
                     </connections>
                 </viewController>

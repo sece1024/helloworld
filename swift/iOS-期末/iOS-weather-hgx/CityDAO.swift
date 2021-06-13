@@ -10,6 +10,7 @@ import Foundation
 // 当前关注城市
 class CityDAO{
     private var DBCITY_FOCUS = "cityFocus.sqlite3"
+    private var CITY_NOW = "cityFocusedNow.plist"
     private var db: OpaquePointer? = nil
     
     // Sigleton Pattern
@@ -17,6 +18,7 @@ class CityDAO{
         let instance = CityDAO()
         //初始化属性列表文件
         instance.createEditableCopyOfDatabaseIfNeeded()
+        instance.createEditableCopyOfPlistIfNeeded()
         return instance
     }()
     
@@ -148,5 +150,39 @@ class CityDAO{
             }
             sqlite3_close(db)
         }
+    }
+    private func createEditableCopyOfPlistIfNeeded(){
+        let cityFocusedDic = ["name": ""] as NSDictionary
+        
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let path = documentDirectory.appendingPathComponent(self.CITY_NOW)
+        let fileManager = FileManager.default
+        
+        let plistExits = fileManager.fileExists(atPath: path)
+        if(!plistExits){
+            let bundle = Bundle.main.path(forResource: "cityFocusedNow", ofType: "plist")
+            do{
+                try fileManager.copyItem(atPath: bundle!, toPath: path)
+            }catch let error as NSError{
+                print("plist数据保存错误, \(error.localizedDescription)")
+                assert(false, "错误写入文件")
+            }
+            
+//            let frameworkBundle = Bundle(for: CityDAO.self)
+//            let frameworkBundlePath = frameworkBundle.resourcePath as NSString?
+//            let defaultListPath = frameworkBundlePath?.appendingPathComponent(self.CITY_NOW)
+//            
+//            do{
+//                try fileManager.copyItem(atPath: defaultListPath, toPath: <#T##String#>)
+//            }
+        }
+        cityFocusedDic.write(toFile: path, atomically: true)
+        
+        print("+++++++开始+++++++++")
+        let paths2 = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let path2 = paths2.appendingPathComponent(self.CITY_NOW)
+        let save = NSDictionary(contentsOfFile: path2)
+        print(save!)
+        
     }
 }
