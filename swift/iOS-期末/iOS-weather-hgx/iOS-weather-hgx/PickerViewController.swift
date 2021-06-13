@@ -27,8 +27,9 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         self.picker.selectedRow(inComponent: 0)
 //        self.view.addSubview(picker)
+        let cityNow: String = self.cityBl.getFocuedCity()
         for index in 0...(self.cityFocusList.count - 1){
-            if self.cityFocusList[index] == ViewController.city.nowCity{
+            if self.cityFocusList[index] == cityNow{
                 self.picker.selectRow(index, inComponent: 0, animated: true)
                 break
             }
@@ -44,7 +45,8 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func onSave(_ sender: Any) {
         let choicedCity: String = self.cityFocusList[self.picker.selectedRow(inComponent: 0)]
         print("选择的城市为: \(choicedCity)")
-        ViewController.city.nowCity = choicedCity
+//        ViewController.city.nowCity = choicedCity
+        self.cityBl.setFocuedCity(name: choicedCity)
         self.performSegue(withIdentifier: "FromCityChoiceToHome", sender: nil)
     }
     @IBAction func onCancel(_ sender: Any) {

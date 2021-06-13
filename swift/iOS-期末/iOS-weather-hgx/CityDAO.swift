@@ -160,13 +160,8 @@ class CityDAO{
         
         let plistExits = fileManager.fileExists(atPath: path)
         if(!plistExits){
-            let bundle = Bundle.main.path(forResource: "cityFocusedNow", ofType: "plist")
-            do{
-                try fileManager.copyItem(atPath: bundle!, toPath: path)
-            }catch let error as NSError{
-                print("plist数据保存错误, \(error.localizedDescription)")
-                assert(false, "错误写入文件")
-            }
+           
+            cityFocusedDic.write(toFile: path, atomically: true)
             
 //            let frameworkBundle = Bundle(for: CityDAO.self)
 //            let frameworkBundlePath = frameworkBundle.resourcePath as NSString?
@@ -176,13 +171,58 @@ class CityDAO{
 //                try fileManager.copyItem(atPath: defaultListPath, toPath: <#T##String#>)
 //            }
         }
-        cityFocusedDic.write(toFile: path, atomically: true)
         
-        print("+++++++开始+++++++++")
-        let paths2 = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
-        let path2 = paths2.appendingPathComponent(self.CITY_NOW)
-        let save = NSDictionary(contentsOfFile: path2)
-        print(save!)
+//        print("+++++++开始+++++++++")
+//        let paths2 = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+//        let path2 = paths2.appendingPathComponent(self.CITY_NOW)
+//        let save = NSDictionary(contentsOfFile: path2)
+//        print(save!)
+        
+    }
+    
+    // 获取当前关注城市
+    func getFocusedCity() -> String{
+        print("getFocusCity(): ")
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let path = documentDirectory.appendingPathComponent(self.CITY_NOW)
+        
+        let fileManager = FileManager.default
+        
+        let plistExits = fileManager.fileExists(atPath: path)
+        if(!plistExits){
+            print("不存在文件： \(path)")
+        }else{
+            let dic: NSDictionary = NSDictionary(contentsOfFile: path)!
+//            print("dic: \(dic)")
+            
+            let k = dic.allKeys[0]
+            let v = dic[k] as! String
+            return v
+        }
+        return ""
+    }
+    // 修改当前关注城市
+    func setFocuedCity(name: String){
+        print("In setFocusedCity(): ")
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let path = documentDirectory.appendingPathComponent(self.CITY_NOW)
+        
+        let fileManager = FileManager.default
+        
+        let plistExits = fileManager.fileExists(atPath: path)
+        if(!plistExits){
+            print("不存在文件： \(path)")
+        }else{
+            
+            let dic: NSDictionary = NSDictionary(contentsOfFile: path)!
+            
+//            let newDic: NSDictionary = ["name": "\(dic["name"])"]
+//            newDic.write(toFile: path, atomically: true)
+//            print("newDic: \(newDic)")
+//            print("After set, self.getFocusedCity() = \(self.getFocusedCity())")
+            dic.setValue(name, forKey: "name")
+            dic.write(toFile: path, atomically: true)
+        }
         
     }
 }

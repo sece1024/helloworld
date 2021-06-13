@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0070749F26760C2F00F18BC9 /* Weather7DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070749E26760C2F00F18BC9 /* Weather7DaysTableViewController.swift */; };
 		0071B0E42671F21300D2D1C7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B0E32671F21300D2D1C7 /* City.swift */; };
 		0071B0E72671F41000D2D1C7 /* CityDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B0E62671F41000D2D1C7 /* CityDAO.swift */; };
 		0071B0EA2671F81400D2D1C7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0071B0E92671F81400D2D1C7 /* libsqlite3.tbd */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0070749E26760C2F00F18BC9 /* Weather7DaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather7DaysTableViewController.swift; sourceTree = "<group>"; };
 		0071B0E32671F21300D2D1C7 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		0071B0E62671F41000D2D1C7 /* CityDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDAO.swift; sourceTree = "<group>"; };
 		0071B0E92671F81400D2D1C7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -174,6 +176,7 @@
 				00B8FA8F266E0E2D004F7255 /* Info.plist */,
 				00B8FA95266E0E87004F7255 /* Http.swift */,
 				0071B0EF267210E600D2D1C7 /* PickerViewController.swift */,
+				0070749E26760C2F00F18BC9 /* Weather7DaysTableViewController.swift */,
 			);
 			path = "iOS-weather-hgx";
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				0071B0E42671F21300D2D1C7 /* City.swift in Sources */,
 				0071B0F0267210E600D2D1C7 /* PickerViewController.swift in Sources */,
 				007821872674D3E000FCA5F5 /* Weather.swift in Sources */,
+				0070749F26760C2F00F18BC9 /* Weather7DaysTableViewController.swift in Sources */,
 				00E212BB2671B51E00D128F9 /* ProvincesTableViewController.swift in Sources */,
 				00B8FA84266E0E2D004F7255 /* AppDelegate.swift in Sources */,
 				0071B0E72671F41000D2D1C7 /* CityDAO.swift in Sources */,

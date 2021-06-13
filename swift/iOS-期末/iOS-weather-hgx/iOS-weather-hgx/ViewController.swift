@@ -23,58 +23,45 @@ class ViewController: UIViewController {
     @IBOutlet weak var temTom: UILabel!
     @IBOutlet weak var temAfterTom: UILabel!
     
+    @IBOutlet weak var headTem: UILabel!
+    @IBOutlet weak var headDesc: UILabel!
+    
+    
     
     
     var cityBl = CityBL()
     public static var city = City()
+//    public static var weather7: Weather7
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
         // 没有选择城市，则指定一个
-        if ViewController.city.nowCity == ""{
+        let name: String = self.cityBl.getFocuedCity()
+        
+        if name == ""{
             ViewController.city.nowCity = self.cityBl.getAll()[0]
+            self.cityBl.setFocuedCity(name: self.cityBl.getAll()[0])
+        }else{
+            ViewController.city.nowCity = name
         }
+        
+        // 设置城市名
         self.titleLabel.text = ViewController.city.nowCity
+        
+        
         ViewController.city.cityList = cityBl.getAll()
         print("self.city.cityList = \(ViewController.city.cityList)")
-        print("cityNow: \(ViewController.city.nowCity)")
+        print("当前城市 cityNow: \(ViewController.city.nowCity)")
         
-        
+        self.updateWeather()
         
     }
     
     @IBAction func onGet(_ sender: UIButton) {
-        var wea7: Weather7!
         
-                let url = "http://www.tianqiapi.com/api?version=v1&appid=38167911&appsecret=DuzVen06" + "&city=" + ViewController.city.nowCity
-        
-                Http.request(method: .GET, url: url, params: ["a":"list","c":"data","type":1], complete: {r in
-        
-
-                    let temp = self.jsonStrToNsdic(str: r)
-                    wea7 = self.nsDicToWeather7(nsDic: temp)
-//                    self.labelToday.text = "今天～" + (wea7.data[0]["wea"] as! String)
-//                    self.temToday.text = (wea7.data[0]["tem"] as! String)
-//                    let img = (wea7.data[0]["wea_img"] as! String) + ".png"
-//                    self.imgToday.image = UIImage(named: img)
-                    let days = ["今天～", "明天～", "后天～"]
-                    let labels = [self.labelToday, self.labelTom, self.labelAfterTom]
-                    let tems = [self.temToday, self.temTom, self.temAfterTom]
-                    let imgs = [self.imgToday, self.imgTomorrow, self.imgAfterTom]
-                    for index in 0..<3{
-                        labels[index]?.text = (days[index] + (wea7.data[index]["wea"] as! String))
-                        tems[index]?.text = (wea7.data[0]["tem"] as! String)
-                        imgs[index]?.image = UIImage(named: ((wea7.data[0]["wea_img"] as! String) + ".png"))
-                    }
-        
-                }, error:{error in
-        
-                    print("请求出错了:",error.debugDescription)
-                    
-                })
-       
+       self.updateWeather()
     }
     
     
@@ -115,22 +102,39 @@ class ViewController: UIViewController {
     // 根据当前城市名更新天气
     func updateWeather(){
         var wea7: Weather7!
+        
+        
+        //        cityBl.setFocuedCity(name: ViewController.city.nowCity)
+        //        print("尝试修改当前城市的plist文件: \(self.cityBl.getFocuedCity())")
+        
         let url = "http://www.tianqiapi.com/api?version=v1&appid=38167911&appsecret=DuzVen06" + "&city=" + ViewController.city.nowCity
         
         Http.request(method: .GET, url: url, params: ["a":"list","c":"data","type":1], complete: {r in
             
+            
             let temp = self.jsonStrToNsdic(str: r)
             wea7 = self.nsDicToWeather7(nsDic: temp)
-            self.labelToday.text = "今天～" + (wea7.data[0]["wea"] as! String)
-            self.temToday.text = (wea7.data[0]["tem"] as! String)
-            let img = (wea7.data[0]["wea_img"] as! String) + ".png"
-            self.imgToday.image = UIImage(named: img)
-            var i = 0
-            for label in [self.labelToday, self.labelTom, self.labelAfterTom]{
-                label?.text = (wea7.data[i]["wea"] as! String)
-                i += 1
+            // 给天气的静态变量赋值
+//            ViewController.weather7 = wea7
+            //                    self.labelToday.text = "今天～" + (wea7.data[0]["wea"] as! String)
+            //                    self.temToday.text = (wea7.data[0]["tem"] as! String)
+            //                    let img = (wea7.data[0]["wea_img"] as! String) + ".png"
+            //                    self.imgToday.image = UIImage(named: img)
+            
+            // 更新三天内的天气
+            let strDays = ["今天～", "明天～", "后天～"]
+            let labels = [self.labelToday, self.labelTom, self.labelAfterTom]
+            let tems = [self.temToday, self.temTom, self.temAfterTom]
+            let imgs = [self.imgToday, self.imgTomorrow, self.imgAfterTom]
+            for index in 0..<3{
+                labels[index]?.text = (strDays[index] + (wea7.data[index]["wea"] as! String))
+                tems[index]?.text = ((wea7.data[index]["tem1"] as! String) + "/" + (wea7.data[index]["tem2"] as! String))
+                imgs[index]?.image = UIImage(named: ((wea7.data[index]["wea_img"] as! String) + ".png"))
             }
-        
+            
+            // 更新标题上的温度和天气
+            self.headTem.text = (wea7.data[0]["tem"] as! String)
+            self.headDesc.text = (wea7.data[0]["wea"] as! String)
             
         }, error:{error in
             

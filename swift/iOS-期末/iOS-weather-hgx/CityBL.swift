@@ -46,4 +46,17 @@ class CityBL{
         let dao: CityDAO = CityDAO.sharedInstance
         print(dao.findAll())
     }
+    // 修改当前关注城市
+    func setFocuedCity(name: String){
+        let dao: CityDAO = CityDAO.sharedInstance
+        dao.setFocuedCity(name: name)
+    }
+    // 获取当前关注城市
+    func getFocuedCity() -> String{
+        let dao: CityDAO = CityDAO.sharedInstance
+        
+        return dao.getFocusedCity()
+    }
+    
+    
 }
