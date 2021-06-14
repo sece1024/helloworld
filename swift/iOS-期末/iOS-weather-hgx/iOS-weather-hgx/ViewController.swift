@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     var cityBl = CityBL()
     public static var city = City()
-//    public static var weather7: Weather7
+    public static var weather7: Weather7!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,40 @@ class ViewController: UIViewController {
         print("self.city.cityList = \(ViewController.city.cityList)")
         print("当前城市 cityNow: \(ViewController.city.nowCity)")
         
+        // 设置背景图片
+//        self.setBkByName(name: "bk05", type: ".jpg", alpha: 0.78)
+        
         self.updateWeather()
+//        self.setBKByWeather()
+        
+    }
+    
+    // 设置背景图片
+    func setBkByName(name: String, type: String, alpha: CGFloat){
+        let imageName = name + type
+        let page = UIView(frame: self.view.bounds)
+        //        page.backgroundColor = UIColor(red: 0x37/255, green: 0xba/255, blue: 0x46/255, alpha: 0.87)
+        page.backgroundColor = UIColor(patternImage: UIImage(named:imageName)!)
+        page.alpha = (alpha >= 0 && alpha < 1) ? alpha : 1
+        
+        self.view.addSubview(page)
+        self.view.sendSubview(toBack: page)
+        
+    }
+    // 根据天气改变背景
+    func setBKByWeather(imgName: String){
+        let alpha: CGFloat = 0.87
+//        let imgName: String = (ViewController.weather7.data[0]["wea_img"] as! String)
+        
+        if imgName == "qing"{
+            self.setBkByName(name: "bk_sun", type: ".jpg", alpha: alpha)
+        }else if (imgName == "duoyun") || (imgName == "yun"){
+            self.setBkByName(name: "bk_yun", type: ".jpg", alpha: alpha)
+        }else if (imgName == "xue") || (imgName == "yujiaxue"){
+            self.setBkByName(name: "bk_xue", type: ".jpg", alpha: alpha)
+        }else{
+            self.setBkByName(name: "bk02", type: ".png", alpha: 0.7)
+        }
         
     }
     
@@ -115,7 +148,7 @@ class ViewController: UIViewController {
             let temp = self.jsonStrToNsdic(str: r)
             wea7 = self.nsDicToWeather7(nsDic: temp)
             // 给天气的静态变量赋值
-//            ViewController.weather7 = wea7
+            ViewController.weather7 = wea7
             //                    self.labelToday.text = "今天～" + (wea7.data[0]["wea"] as! String)
             //                    self.temToday.text = (wea7.data[0]["tem"] as! String)
             //                    let img = (wea7.data[0]["wea_img"] as! String) + ".png"
@@ -135,6 +168,9 @@ class ViewController: UIViewController {
             // 更新标题上的温度和天气
             self.headTem.text = (wea7.data[0]["tem"] as! String)
             self.headDesc.text = (wea7.data[0]["wea"] as! String)
+            
+            // 根据今日天气更新背景图片
+            self.setBKByWeather(imgName: (wea7.data[0]["wea_img"] as! String))
             
         }, error:{error in
             

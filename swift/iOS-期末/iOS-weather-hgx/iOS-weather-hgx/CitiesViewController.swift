@@ -29,7 +29,22 @@ class CitiesViewController: UITableViewController {
         // Do any additional setup after loading the view.
         self.title = self.provinceName
         self.finalCityList = self.cityBl.getAll()
+        
+        self.setBkByName(name: "bk05", type: ".jpg", alpha: 0.90)
 
+    }
+    
+    // 设置背景图片
+    func setBkByName(name: String, type: String, alpha: CGFloat){
+        let imageName = name + type
+        let page = UIView(frame: self.view.bounds)
+        //        page.backgroundColor = UIColor(red: 0x37/255, green: 0xba/255, blue: 0x46/255, alpha: 0.87)
+        page.backgroundColor = UIColor(patternImage: UIImage(named:imageName)!)
+        page.alpha = (alpha >= 0 && alpha < 1) ? alpha : 1
+        
+        self.view.addSubview(page)
+        self.view.sendSubview(toBack: page)
+        
     }
  
   
