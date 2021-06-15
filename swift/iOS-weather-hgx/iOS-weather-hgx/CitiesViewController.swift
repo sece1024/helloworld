@@ -51,11 +51,19 @@ class CitiesViewController: UITableViewController {
     @IBAction func save(_ sender: Any) {
         print("Button Save been clicked")
         self.performSegue(withIdentifier: "GoToHome", sender: nil)
+        // 给列表添加新关注的城市
         for item in self.citiesBeFocusedNow{
             if !(self.finalCityList.contains(item)){
                 self.finalCityList.append(item)
             }
         }
+        // 从列表中删除取消关注的城市
+        for item in self.finalCityList{
+            if self.listCities.contains(item) && !(self.citiesBeFocusedNow.contains(item)){
+                self.finalCityList.remove(at: self.finalCityList.index(of: item)!)
+            }
+        }
+        
         cityBl.update(cityList: self.finalCityList)
     }
     
